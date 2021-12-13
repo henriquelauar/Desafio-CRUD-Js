@@ -73,6 +73,10 @@ h3 {
     position: relative;
 }
 
+input {
+    border: 1px solid black;
+}
+
 @keyframes modal {
     from {
         opacity: 0;
