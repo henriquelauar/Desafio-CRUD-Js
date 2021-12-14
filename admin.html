@@ -1,135 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>CRONOS AGÊNCIA - admin</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/estilo.css" />
-    <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon" />
-  </head>
 
-  <body>
-    <header>
-      <div class="container">
-        <a href="#">
-          <img src="imagens/CRONOS-logo-white.png" alt="Agência CRONOS" />
-        </a>
-        <h1>Painel administrativo</h1>
-      </div>
-    </header>
-    <section id="servicos" class="py-5 mb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <h3>Serviços</h3>
-            <button class="btn btn-primary">Adicionar novo</button>
-            <table class="table my-5">
-              <thead>
-                <tr>
-                  <td>Nome</td>
-                  <td>Imagem</td>
-                  <td>Descrição</td>
-                  <td>Ações</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Desenvolvimento Web</td>
-                  <td>
-                    <img src="imagens/ilustra-web.png" class="img-fluid" />
-                  </td>
-                  <td>
-                    Consequatur debitis ipsa numquam illum placeat quod
-                    deleniti.
-                  </td>
-                  <td>
-                    <button class="btn btn-secondary m-1">editar</button>
-                    <button class="btn btn-danger m-1">excluir</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Marketing Digital</td>
-                  <td>
-                    <img
-                      src="imagens/ilustra-marketing.png"
-                      class="img-fluid"
-                    />
-                  </td>
-                  <td>
-                    Consequatur debitis ipsa numquam illum placeat quod
-                    deleniti.
-                  </td>
-                  <td>
-                    <button class="btn btn-secondary m-1">editar</button>
-                    <button class="btn btn-danger m-1">excluir</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Consultoria UX</td>
-                  <td>
-                    <img src="imagens/ilustra-ux.png" class="img-fluid" />
-                  </td>
-                  <td>
-                    Consequatur debitis ipsa numquam illum placeat quod
-                    deleniti.
-                  </td>
-                  <td>
-                    <button class="btn btn-secondary m-1">editar</button>
-                    <button class="btn btn-danger m-1">excluir</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>CRONOS AGÊNCIA - admin</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="css/estilo.css"/>
+  <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon"/>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a href="#">
+        <img src="imagens/CRONOS-logo-white.png" alt="Agência CRONOS"/>
+      </a>
+      <h1 id="painel">Painel administrativo</h1>
+    </div>
+  </header>
+  <section id="servicos" class="py-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h3>Serviços</h3>
+          <button class="btn btn-primary">Adicionar novo</button>
+          <div id="modal-adicionar" class="modal-container">
+            <div id="modal">
+              <button class="fechar">X</button>
+              <h3 class="subtitulo">Adicione um novo curso</h3>
+              <section class="formulario">
+                <form>
+                  <label for="nome">Digite o nome do serviço:</label>
+                  <input type="text" name="nome" id="nome" /> <br> <br>
+                  <label for="imagem">Selecionar a imagem:</label>
+                  <input type="file" accept="image/*" name="imagem" id="imagem"/> <br><br>
+                  <img id="output" width="200"/> <br>
+                  <label for="descricao">Digite a descrição:</label> <br>
+                  <textarea name="descricao" id="descricao"></textarea> <br> <br>
+                  <button id="btnAdicionar" onclick="return addToTable()">Adicionar serviço</button>
+                </form>
+              </section>
+            </div>
           </div>
+
+          <table class="my-5" id="myTable">
+            <thead>
+              <tr>
+                <td>Nome</td>
+                <td>Imagem</td>
+                <td>Descrição</td>
+                <td>Ações</td>
+              </tr>
+            </thead>
+            <tbody class="painel-cursos">
+              <tr>
+                <td>Desenvolvimento Web</td>
+                <td>
+                  <img src="imagens/ilustra-web.png" class="img-fluid"/>
+                </td>
+                <td>
+                  Consequatur debitis ipsa numquam illum placeat quod
+                  deleniti.
+                </td>
+                <td>
+                  <button class="btn btn-secondary m-1">Editar</button>
+                  <button class="btn btn-danger m-1">Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Marketing Digital</td>
+                <td>
+                  <img src="imagens/ilustra-marketing.png" class="img-fluid"/>
+                </td>
+                <td>
+                  Consequatur debitis ipsa numquam illum placeat quod
+                  deleniti.
+                </td>
+                <td>
+                  <button class="btn btn-secondary m-1">Editar</button>
+                  <button class="btn btn-danger m-1">Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Consultoria UX</td>
+                <td>
+                  <img src="imagens/ilustra-ux.png" class="img-fluid"/>
+                </td>
+                <td>
+                  Consequatur debitis ipsa numquam illum placeat quod
+                  deleniti.
+                </td>
+                <td>
+                  <button class="btn btn-secondary m-1">Editar</button>
+                  <button class="btn btn-danger m-1">Excluir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-    </section>
-    <div id="modal-adicionar" class="modal-container">
-      <div class="formulario">
-        <button class="fechar">X</button>
-        <h3 class="subtitulo">Adicione um novo curso</h3>
-        <form>
-            <label for="servico">Digite o nome do serviço:</label>
-            <input type="text" name="servico" id="servico" required /> <br />
-            <label for="imagem">Selecionar a imagem:</label>
-            <input type="file" id="imagem" accept=".jpg, .jpeg, .png" /> <br />
-            <label for="descricao">Digite a descrição do serviço:</label>
-            <textarea cols="30" rows="5"></textarea> <br />
-          <input type="button" id="button" value="Adicionar" />
-        </form>
-      </div>
     </div>
-    <footer class="py-3 bg-light">
-      <div class="container text-center">
-        <p class="m-0">
-          copyright 2021
-          <img src="imagens/favicon.png" width="30" alt="" /> agência CRONOS
-        </p>
-      </div>
-    </footer>
+  </section>
+  <footer class="py-3 bg-light">
+    <div class="container text-center">
+      <p class="m-0">
+        copyright 2021
+        <img src="imagens/favicon.png" width="30" alt=""/> agência CRONOS
+      </p>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

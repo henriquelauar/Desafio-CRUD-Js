@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -51,6 +52,12 @@ h3 {
     margin: 10px 0;
 }
 
+table img {
+    width: 220px;
+    border: 1px solid #ccc;
+}
+
+
 .modal-container {
     width: 100vw;
     height: 100vh;
@@ -64,17 +71,13 @@ h3 {
     align-items: center;
 }
 
-.formulario {
+#modal {
     background: white;
-    width: 60%;
+    width: 30%;
     min-width: 300px;
     padding: 40px;
     border: 10px solid #0097A7;
     position: relative;
-}
-
-input {
-    border: 1px solid black;
 }
 
 @keyframes modal {
@@ -88,24 +91,27 @@ input {
     }
 }
 
-.mostrar .formulario {
-    animation: modal .3s;
+.mostrar #modal {
+    animation: modal 500ms;
 }
 
 .modal-container.mostrar {
     display: flex;
 }
 
-.subtitulo {
-    text-align: center;
+.input {
+    margin: 5px 5px;;
 }
 
-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: space-evenly;
-    margin-top: 50px;
+input {
+    border: 1px solid black;
+    width: 25vw;
 }
+
+#descricao {
+    width: 25vw;
+}
+
 
 .fechar {
     position: absolute;
@@ -122,8 +128,16 @@ form {
     box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
 }
 
-table img {
-    width: 220px;
-    border: 1px solid #ccc;
+.subtitulo {
+    text-align: center;
 }
 
+.formulario {
+    display: grid;
+}
+
+#btnAdicionar { 
+    background: #0097A7;
+    border: none;
+    color: white;
+}
