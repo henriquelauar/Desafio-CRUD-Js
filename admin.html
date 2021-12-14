@@ -36,7 +36,7 @@
                   <label for="nome">Digite o nome do serviço:</label>
                   <input type="text" name="nome" id="nome" /> <br> <br>
                   <label for="imagem">Selecionar a imagem:</label>
-                  <input type="file" id="imagem" name="imagem" accept="image/png, image/jpeg">
+                  <input type="file" accept="image/*" name="imagem" id="imagem"/> <br><br>
                   <label for="descricao">Digite a descrição:</label> <br>
                   <textarea name="descricao" id="descricao"></textarea> <br> <br>
                   <button id="btnAdicionar" onclick="return addToTable()">Adicionar serviço</button>
