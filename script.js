@@ -27,9 +27,9 @@ function addToTable() {
   const cell1 = row.insertCell(0);
   const cell2 = row.insertCell(1);
   const cell3 = row.insertCell(2);
-  row.id = tableSize
+  row.id = tableSize;
 
-  
+
   cell1.innerHTML = nome;
   cell2.innerHTML = imagem;
   cell3.innerHTML = descricao;
