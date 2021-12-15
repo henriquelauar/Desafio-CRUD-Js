@@ -73,7 +73,6 @@ table img {
 
 #modal {
     background: white;
-    width: 30%;
     min-width: 300px;
     padding: 40px;
     border: 10px solid #0097A7;
@@ -99,19 +98,10 @@ table img {
     display: flex;
 }
 
-.input {
-    margin: 5px 5px;;
-}
-
 input {
     border: 1px solid black;
-    width: 25vw;
+    margin-bottom: 10%;
 }
-
-#descricao {
-    width: 25vw;
-}
-
 
 .fechar {
     position: absolute;
@@ -130,9 +120,11 @@ input {
 
 .subtitulo {
     text-align: center;
+    margin-top: 0;
+    cursor: default;
 }
 
-.formulario {
+form {
     display: grid;
 }
 
@@ -140,4 +132,11 @@ input {
     background: #0097A7;
     border: none;
     color: white;
+    width: 100%;
+    margin-top: 10%;
+}
+
+#btnAdicionar:hover {
+    background: green;
+    transition-duration: 500ms;
 }
