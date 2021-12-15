@@ -13,8 +13,6 @@ function iniciaModal(modalID) {
 const btn = document.querySelector('.btn.btn-primary')
 btn.addEventListener('click', () => iniciaModal('modal-adicionar'));
 
-
-
 function addToTable() {
 
   const nome = document.getElementById('nome').value;
@@ -29,16 +27,13 @@ function addToTable() {
   const cell3 = row.insertCell(2);
   row.id = tableSize;
 
-
   cell1.innerHTML = nome;
   cell2.innerHTML = imagem;
   cell3.innerHTML = descricao;
 
-
   document.getElementById('nome').value = "";
   document.getElementById('imagem').files[0].name="";
   document.getElementById('descricao').value = "";
-
 
   return false;
 }
