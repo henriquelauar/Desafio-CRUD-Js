@@ -26,7 +26,8 @@
       <div class="row">
         <div class="col">
           <h3>Serviços</h3>
-          <button class="btn btn-primary">Adicionar novo</button>
+          <button id="btnAdc" class="btn btn-primary">Adicionar novo</button>
+
           <div id="modal-adicionar" class="modal-container">
             <div id="modal">
               <button class="fechar">X</button>
@@ -34,12 +35,12 @@
               <section class="formulario">
                 <form>
                   <label for="nome">Digite o nome do serviço:</label>
-                  <input type="text" name="nome" id="nome" /> <br> <br>
+                  <input type="text" name="nome" id="nome" />
                   <label for="imagem">Selecionar a imagem:</label>
-                  <input type="file" accept="image/*" name="imagem" id="imagem"/> <br><br>
-                  <label for="descricao">Digite a descrição:</label> <br>
-                  <textarea name="descricao" id="descricao"></textarea> <br> <br>
-                  <button id="btnAdicionar" onclick="return addToTable()">Adicionar serviço</button>
+                  <input type="file" accept="image/*" name="imagem" id="imagem"/>
+                  <label for="descricao">Digite a descrição:</label>
+                  <textarea name="descricao" id="descricao"></textarea>
+                  <button id="btnAdicionar">Adicionar serviço</button>
                 </form>
               </section>
             </div>
