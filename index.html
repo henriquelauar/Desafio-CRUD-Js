@@ -32,17 +32,15 @@
             <div id="modal">
               <button class="fechar">X</button>
               <h3 class="subtitulo">Adicione um novo serviço</h3>
-              <section class="formulario">
                 <form>
                   <label for="nome">Digite o nome do serviço:</label>
-                  <input type="text" name="nome" id="nome" />
+                  <input type="text" id="nome" class="modal-field" required/>
                   <label for="imagem">Selecionar a imagem:</label>
-                  <input type="file" accept="image/*" name="imagem" id="imagem"/>
+                  <input type="file" id="imagem" class="modal-field" accept="image" required/>
                   <label for="descricao">Digite a descrição:</label>
-                  <textarea name="descricao" id="descricao"></textarea>
+                  <textarea id="descricao" class="modal-field" required></textarea>
                   <button id="btnAdicionar">Adicionar serviço</button>
                 </form>
-              </section>
             </div>
           </div>
 
