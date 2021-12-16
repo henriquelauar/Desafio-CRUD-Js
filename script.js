@@ -94,3 +94,13 @@ const editDelete = (e) => {
 }
 
 updateTable()
+
+document.getElementById('btnEnviar').addEventListener('click', saveService)
+
+document.querySelector('#myTable>tbody.movel').addEventListener('click', editDelete)
+
+document.getElementById('btnAdc').addEventListener('click', openModal)
+
+document.getElementById('btnFechar').addEventListener('click', closeModal)
+
+document.querySelector('.fechar').addEventListener('click', closeModal)
