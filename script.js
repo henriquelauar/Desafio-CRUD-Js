@@ -14,3 +14,11 @@ const deleteService = (index) => {
   dbService.splice(index, 1)
   setLocalStorage(dbService)
 } 
+
+const updateService = (index, service) => {
+  const dbService = readService()
+  dbService[index] = service
+  setLocalStorage(dbService)
+}
+
+const readService = () => getLocalStorage()
