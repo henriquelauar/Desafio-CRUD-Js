@@ -22,3 +22,13 @@ const updateService = (index, service) => {
 }
 
 const readService = () => getLocalStorage()
+
+const createService = (service) => {
+  const dbService = getLocalStorage()
+  dbService.push (service)
+  setLocalStorage(dbService)
+}
+
+const isValidFields = () => {
+  return document.querySelector('form').reportValidity()
+}
