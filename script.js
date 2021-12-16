@@ -37,3 +37,17 @@ const clearFields = () => {
   const fields = document.querySelectorAll('.modal-field')
   fields.forEach(field => field.value = "")
 }
+
+const createRow = (service, index) => {
+  const newRow = document.createElement('tr')
+  newRow.innerHTML = `
+  <td>${service.nome}</td>
+  <td><img src=${service.imagem} class="img-fluid"></td>
+  <td>${service.descricao}</td>
+  <td>
+    <button type="button" class="btn btn-secondary m-1" id="edit-${index}">Editar</button>
+    <button type="button" class="btn btn-danger m-1" id="delete-${index}">Excluir</button>    
+  </td>
+  `
+  document.querySelector('#myTable>tbody.movel').appendChild(newRow)
+}
