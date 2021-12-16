@@ -49,5 +49,10 @@ const createRow = (service, index) => {
     <button type="button" class="btn btn-danger m-1" id="delete-${index}">Excluir</button>    
   </td>
   `
-  document.querySelector('#myTable>tbody.movel').appendChild(newRow)
+  document.querySelector('#myTable>tbody').appendChild(newRow)
+}
+
+const clearTable = () => {
+  const rows = document.querySelectorAll ('#myTable>tbody tr')
+  rows.forEach(row => row.parentNode.removeChild(row))
 }
