@@ -34,17 +34,20 @@
               <h3 class="subtitulo">Adicione um novo serviço</h3>
                 <form>
                   <label for="nome">Digite o nome do serviço:</label>
-                  <input type="text" id="nome" class="modal-field" required/>
-                  <label for="imagem">Selecionar a imagem:</label>
-                  <input type="file" id="imagem" class="modal-field" accept="image" required/>
+                  <input type="text" id="nome" class="modal-field" placeholder="Ex: Marketing Digital" required/>
+                  <label for="imagem">Digite o URL da imagem:</label>
+                  <input type="text" id="imagem" class="modal-field" placeholder="Ex: google.com.br..." required/>
                   <label for="descricao">Digite a descrição:</label>
-                  <textarea id="descricao" class="modal-field" required></textarea>
-                  <button id="btnAdicionar">Adicionar serviço</button>
+                  <textarea id="descricao" class="modal-field" rows="4" placeholder="Ex: Serviço de marketing digital" required></textarea>
                 </form>
+                <div class="button">
+                  <button type="button" class="btn btn-danger m-2" id="btnFechar">Fechar</button>
+                  <button type="submit" class="btn btn-primary" id="btnEnviar">Salvar serviço</button>
+                </div>
             </div>
           </div>
 
-          <table class="my-5" id="myTable">
+          <table class="table my-5" id="myTable">
             <thead>
               <tr>
                 <td>Nome</td>
@@ -53,7 +56,7 @@
                 <td>Ações</td>
               </tr>
             </thead>
-            <tbody class="painel-cursos">
+            <tbody class="fixo">
               <tr>
                 <td>Desenvolvimento Web</td>
                 <td>
@@ -64,8 +67,8 @@
                   deleniti.
                 </td>
                 <td>
-                  <button class="btn btn-secondary m-1">Editar</button>
-                  <button class="btn btn-danger m-1">Excluir</button>
+                  <button class="btn btn-secondary m-1" id="edit">Editar</button>
+                  <button class="btn btn-danger m-1" id="delete">Excluir</button>
                 </td>
               </tr>
               <tr>
@@ -78,8 +81,8 @@
                   deleniti.
                 </td>
                 <td>
-                  <button class="btn btn-secondary m-1">Editar</button>
-                  <button class="btn btn-danger m-1">Excluir</button>
+                  <button class="btn btn-secondary m-1" id="edit">Editar</button>
+                  <button class="btn btn-danger m-1" id="delete">Excluir</button>
                 </td>
               </tr>
               <tr>
@@ -92,10 +95,13 @@
                   deleniti.
                 </td>
                 <td>
-                  <button class="btn btn-secondary m-1">Editar</button>
-                  <button class="btn btn-danger m-1">Excluir</button>
+                  <button class="btn btn-secondary m-1" id="edit">Editar</button>
+                  <button class="btn btn-danger m-1" id="delete">Excluir</button>
                 </td>
               </tr>
+            </tbody>
+            <tbody class="movel">
+              
             </tbody>
           </table>
         </div>
