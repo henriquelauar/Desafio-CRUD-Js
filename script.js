@@ -32,3 +32,8 @@ const createService = (service) => {
 const isValidFields = () => {
   return document.querySelector('form').reportValidity()
 }
+
+const clearFields = () => {
+  const fields = document.querySelectorAll('.modal-field')
+  fields.forEach(field => field.value = "")
+}
