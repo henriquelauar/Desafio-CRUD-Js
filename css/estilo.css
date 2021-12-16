@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-body {
+body, html {
     margin: 0;
     padding: 0;
 }
@@ -57,7 +57,6 @@ table img {
     border: 1px solid #ccc;
 }
 
-
 .modal-container {
     width: 100vw;
     height: 100vh;
@@ -75,7 +74,7 @@ table img {
     background: white;
     min-width: 300px;
     padding: 40px;
-    border: 10px solid #0097A7;
+    border: 6px solid #0097A7;
     position: relative;
 }
 
@@ -99,8 +98,12 @@ table img {
 }
 
 input {
-    border: 1px solid black;
-    margin-bottom: 10%;
+    border: 1px solid #0097A7;
+    margin-bottom: 7%;
+}
+
+textarea {
+    border: 1px solid #0097A7;
 }
 
 .fechar {
@@ -120,23 +123,35 @@ input {
 
 .subtitulo {
     text-align: center;
-    margin-top: 0;
     cursor: default;
+    margin-top: 0;
 }
 
 form {
     display: grid;
 }
 
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+#btnFechar {
+    background: red;
+    border: none;
+    width: 35%;
+}
+
 #btnAdicionar { 
     background: #0097A7;
     border: none;
     color: white;
-    width: 100%;
-    margin-top: 10%;
+    width: 35%;
 }
 
 #btnAdicionar:hover {
     background: green;
-    transition-duration: 500ms;
+    transition-duration: 800ms;
 }
