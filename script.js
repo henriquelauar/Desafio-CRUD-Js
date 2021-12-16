@@ -69,3 +69,28 @@ const fillFields = (service) => {
   document.getElementById('descricao').value = service.descricao
   document.getElementById('nome').dataset.index = service.index
 }
+
+const editService = (index) => {
+  const service = readService()[index]
+  service.index = index
+  fillFields(service)
+  openModal ()
+}
+
+const editDelete = (e) => {
+  if (e.target.type == 'button') {
+    const [action, index] = e.target.id.split( '-' )
+    if (action == 'edit') {
+      editService(index)
+    } else {
+      const service = readService()[index]
+      const response = confirm(`Deseja realmente excluir o serviço ${service.nome}?`)
+      if (response) {
+          deleteService(index)
+          updateTable()
+      }
+    }
+  } 
+}
+
+updateTable()
