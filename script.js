@@ -38,6 +38,26 @@ const clearFields = () => {
   fields.forEach(field => field.value = "")
 }
 
+const saveService = () => {
+  if (isValidFields()) {
+      const service = {
+          nome: document.getElementById('nome').value,
+          imagem: document.getElementById('imagem').value,
+          descricao: document.getElementById('descricao').value,
+      }
+      const index = document.getElementById('nome').dataset.index
+      if (index == 'new') {
+          createService(service)
+          updateTable()
+          closeModal()
+      } else {
+          updateService(index, service)
+          updateTable()
+          closeModal()
+      }
+  }
+}
+
 const createRow = (service, index) => {
   const newRow = document.createElement('tr')
   newRow.innerHTML = `
@@ -97,7 +117,7 @@ updateTable()
 
 document.getElementById('btnEnviar').addEventListener('click', saveService)
 
-document.querySelector('#myTable>tbody.movel').addEventListener('click', editDelete)
+document.querySelector('#myTable>tbody').addEventListener('click', editDelete)
 
 document.getElementById('btnAdc').addEventListener('click', openModal)
 
