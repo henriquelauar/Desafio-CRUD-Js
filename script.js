@@ -56,3 +56,16 @@ const clearTable = () => {
   const rows = document.querySelectorAll ('#myTable>tbody tr')
   rows.forEach(row => row.parentNode.removeChild(row))
 }
+
+const updateTable = () => {
+  const dbService = readService ()
+  clearTable ()
+  dbService.forEach(createRow)
+}
+
+const fillFields = (service) => {
+  document.getElementById('nome').value = service.nome
+  document.getElementById('imagem').value = service.imagem
+  document.getElementById('descricao').value = service.descricao
+  document.getElementById('nome').dataset.index = service.index
+}
