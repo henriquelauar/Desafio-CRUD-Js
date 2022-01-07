@@ -1,16 +1,16 @@
 # CRUD CHALLENGE – GAMA XP40
 
 Objective
-- The Cronos Agency website was developed during the GamaXP40 to use Javascript knowledge where it is possible to simulate the administrative panel of a course agency, allowing the user to create, register, edit and delete a new or a registered program.
+- The Cronos Agency website was developed during the GamaXP40 to use Javascript knowledge where it is possible to simulate the administrative panel of a service agency, allowing the user to create, register, edit and delete a new or a registered service.
 -------------------
 Technologies
 - HTML, CSS, Javascript, React JS 
 -------------------
 Features
 
-- Create ![image](https://user-images.githubusercontent.com/94016839/148541795-ca90eb1c-99a9-4c56-861e-800976e8a804.png)
+- Create
 
-- Edit and Delete ![image](https://user-images.githubusercontent.com/94016839/148541889-75c3f3b5-be23-44ae-9258-450e07a9c070.png)
+- Edit and Delete
 -------------------
 Prerequisites
 
@@ -29,6 +29,13 @@ How to run the application
 - Use the `$npm install` command in the directory you have cloned the project to
 
 - Use the `$npm start` command to run the Authors application
+-------------------
+How to use the application
+
+- Click on "Adicionar novo" to create a new service ![image](https://user-images.githubusercontent.com/94016839/148541795-ca90eb1c-99a9-4c56-861e-800976e8a804.png)
+- Choose a name, an image url and a description
+- Click on "Salvar serviço" to save the service on the screen
+- To edit or delete any service just click on the button "Editar" to edit and "Excluir" to delete ![image](https://user-images.githubusercontent.com/94016839/148541889-75c3f3b5-be23-44ae-9258-450e07a9c070.png)
 -------------------
 Authors
 - https://github.com/arielpedroso95
